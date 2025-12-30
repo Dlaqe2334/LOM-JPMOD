@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活俠傳 日本語化MOD</title>
+    <style>
+        :root {
+            --bg-color: #f4f1ea;
+            --text-color: #2c2c2c;
+            --accent-color: #8b0000; /* Dark Red */
+            --secondary-color: #4a4a4a;
+            --link-color: #a03030;
+            --border-color: #d4d1ca;
+        }
+
+        body {
+            font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4d1ca' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+        }
+
+        .header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--accent-color);
+            letter-spacing: 0.1em;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        p {
+            margin-bottom: 1.5em;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-color);
+            min-width: 200px;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: var(--accent-color);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: var(--secondary-color);
+        }
+
+        .instructions {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .link-item {
+            text-align: center;
+        }
+
+        .link-item a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+
+        .credits {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .credit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .credit-list li {
+            margin-bottom: 5px;
+        }
+
+        .role {
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+        }
+
+        .version-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 1rem;
+            vertical-align: middle;
+            margin-left: 10px;
+            font-family: sans-serif;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .changelog {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .changelog-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .changelog-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .changelog-meta {
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+
+        .changelog-date {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 8px;
+            font-family: monospace;
+        }
+        
+        .changelog-version {
+            font-weight: bold;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .changelog-desc {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <!-- Header Image -->
+        <img src="header.jpg" alt="活俠傳 Header" class="header-image">
+        <h1>活俠傳 <span class="version-badge">v1.0</span></h1>
+        <p style="font-size: 1.2rem; color: var(--secondary-color);">日本語化MOD</p>
+    </header>
+
+    <section>
+        <p>
+            武侠RPG『活俠傳 (Legend of Mortal)』の有志日本語化MOD配布ページへようこそ。<br>
+            このMODは、ゲーム内のテキストを日本語に翻訳し、より深く物語を楽しめるようにするためのものです。
+        </p>
+    </section>
+
+    <section class="download-section">
+        <h2>ダウンロード</h2>
+        <p>お好みの形式を選んでダウンロードしてください。</p>
+        
+        <a href="https://github.com/Dlaqe2334/LOM-JPMOD/raw/main/活俠傳%20日本語化MOD.exe" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            インストーラー版 (.exe)
+        </a>
+        <a href="https://github.com/Dlaqe2334/LOM-JPMOD/raw/main/活俠傳%20日本語化MOD.zip" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            手動導入版 (.zip)
+        </a>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">
+            ※ 最新バージョンはGitHubから自動的に取得されます。
+        </p>
+    </section>
+
+    <section>
+        <h2>更新履歴</h2>
+        <div class="changelog">
+            <div class="changelog-item">
+                <div class="changelog-meta">
+                    <span class="changelog-date">2025-12-31</span>
+                    <span class="changelog-version">v1.0</span>
+                </div>
+                <div class="changelog-desc">
+                    初期日本語化MODリリース
+                </div>
+            </div>
+            <!-- Future updates can be added here -->
+            <!-- 
+            <div class="changelog-item">
+                <div class="changelog-meta">
+                    <span class="changelog-date">YYYY-MM-DD</span>
+                    <span class="changelog-version">v1.1</span>
+                </div>
+                <div class="changelog-desc">
+                    誤字修正、翻訳改善など
+                </div>
+            </div> 
+            -->
+        </div>
+    </section>
+
+    <section>
+        <h2>導入方法</h2>
+        
+        <div class="instructions">
+            <h3>📦 手動導入版 (ZIP)</h3>
+            <p>
+                ダウンロードしたZIPファイルを解凍し、中身を以下のゲームインストールフォルダにコピー（上書き）してください。<br>
+                ※ 以下はデフォルトのインストール先（Cドライブ）です。別の場所にインストールしている場合は、そのフォルダを指定してください。
+            </p>
+            <p>
+                <code>C:\Program Files (x86)\Steam\steamapps\common\LegendOfMortal</code>
+            </p>
+            <br>
+            <h3>🚀 インストーラー版 (EXE)</h3>
+            <p>
+                ダウンロードしたEXEファイルを実行してください。<br>
+                インストール先は自動的に検出されますが、もし異なる場合は手動で指定してください。
+            </p>
+        </div>
+    </section>
+
+    <section class="links">
+        <div class="link-item">
+            <a href="https://store.steampowered.com/app/1859910/_/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.668 0 .51 4.894.015 11.104l5.93 8.712c.05.073.066.165.044.25-.23.87-.038 1.79.528 2.516.566.726 1.42 1.15 2.336 1.162h.01c.913 0 1.765-.41 2.322-1.127.555-.713.74-1.618.507-2.476-.023-.086-.006-.178.045-.252l5.95-8.736C17.68 4.91 12.556 0 11.979 0zM8.78 19.47c-.68 0-1.23-.55-1.23-1.23s.55-1.23 1.23-1.23 1.23.55 1.23 1.23-.55 1.23-1.23 1.23zm6.44-6.44c-2.13 0-3.86 1.73-3.86 3.86 0 .36.05.71.14 1.04l-2.2-3.23c.58-.38 1.27-.6 2.02-.6 2.13 0 3.86 1.73 3.86 3.86s-1.73 3.86-3.86 3.86c-1.4 0-2.62-.75-3.3-1.87-.16.02-.32.03-.48.03-1.92 0-3.48-1.56-3.48-3.48 0-1.3.72-2.43 1.78-3.03l-4.3-6.3c1.3-2.36 3.8-3.96 6.68-3.96 4.18 0 7.58 3.4 7.58 7.58 0 1.06-.22 2.07-.62 3.01l-.96-1.41z"/></svg>
+                Steam Store
+            </a>
+        </div>
+        <div class="link-item">
+            <a href="https://x.com/Mortal_jp" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Official X
+            </a>
+        </div>
+        <div class="link-item">
+            <a href="https://github.com/Dlaqe2334/LOM-JPMOD" target="_blank">
+                <svg height="24" width="24" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                GitHub Repository
+            </a>
+        </div>
+        <div class="link-item">
+            <a href="https://discord.gg/CV26jEGgVU" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419z"/></svg>
+                Discord Server
+            </a>
+        </div>
+    </section>
+
+    <footer class="credits">
+        <h3>Credits</h3>
+        <ul class="credit-list">
+            <li><span class="role">総括</span> Alpaca</li>
+            <li><span class="role">翻訳</span> kingdeakwang</li>
+            <li><span class="role">翻訳</span> 殿</li>
+            <li><span class="role">翻訳</span> Goosle</li>
+        </ul>
+        <p style="margin-top: 30px; font-size: 0.8rem;">
+            &copy; 2025 Studio Alpaca / Obb Studio. Unofficial Fan Translation.
+        </p>
+    </footer>
+</div>
+
+</body>
+</html>
