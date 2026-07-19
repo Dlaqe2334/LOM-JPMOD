@@ -6,12 +6,16 @@
 <title>活俠傳 日本語化MOD</title>
 <meta name="description" content="武侠RPG『活俠傳 (Legend of Mortal)』の有志日本語化MOD配布ページ">
 <meta name="theme-color" content="#15120d">
+<meta property="og:title" content="活俠傳 日本語化MOD">
+<meta property="og:description" content="武侠RPG『活俠傳 (Legend of Mortal)』の有志日本語化MOD配布ページ">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <script data-goatcounter="https://alpaca2.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&text=%E4%B8%8B%E4%BF%A0%E5%82%B3%E5%8C%A0%E5%B0%8E%E6%98%93%E6%AD%B4%E6%B3%A8%E6%B4%BB%E7%B9%8B%E8%AA%A0&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&text=%E4%B8%8B%E4%BF%A0%E5%82%B3%E5%8C%A0%E5%B0%8E%E6%98%93%E6%AD%B4%E6%B3%A8%E6%B4%BB%E7%B9%8B%E8%AA%A0%E8%AA%AD&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&text=%E4%B8%8B%E4%BF%A0%E5%82%B3%E5%8C%A0%E5%B0%8E%E6%98%93%E6%AD%B4%E6%B3%A8%E6%B4%BB%E7%B9%8B%E8%AA%A0&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&text=%E4%B8%8B%E4%BF%A0%E5%82%B3%E5%8C%A0%E5%B0%8E%E6%98%93%E6%AD%B4%E6%B3%A8%E6%B4%BB%E7%B9%8B%E8%AA%A0%E8%AA%AD&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   --ink:#15120d;
@@ -471,14 +475,90 @@ footer::before{
   box-shadow:inset 0 0 0 2px rgba(247,236,217,.5),0 6px 16px rgba(0,0,0,.35);
 }
 footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;color:var(--ivory)}
-.credits{list-style:none;margin:0 auto;padding:0;max-width:320px}
-.credits li{
-  display:flex;justify-content:space-between;gap:16px;padding:8px 4px;
-  border-bottom:1px dashed rgba(237,229,210,.2);font-size:.92rem;
+.credits-note{
+  font-family:var(--gothic);font-size:.66rem;letter-spacing:.28em;text-indent:.28em;
+  color:rgba(237,229,210,.42);margin:-12px 0 24px;
 }
-.credits li:last-child{border:none}
-.credits .role{font-family:var(--gothic);font-size:.78rem;letter-spacing:.25em;color:var(--gold)}
+.credits{
+  list-style:none;margin:0 auto;padding:0;
+  display:grid;grid-template-columns:repeat(4,max-content);
+  justify-content:center;justify-items:center;column-gap:48px;row-gap:14px;
+}
+.credits li{font-size:.95rem;letter-spacing:.08em;color:var(--ivory)}
 .copyright{margin-top:34px;font-family:var(--gothic);font-size:.72rem;letter-spacing:.1em;color:rgba(237,229,210,.4)}
+
+/* phrase-based line breaking */
+.nb{display:inline-block;max-width:100%}
+@media (max-width:349px){.lead{font-size:.9rem}}
+
+/* ruby */
+ruby rt{
+  font-family:var(--gothic);font-weight:500;font-size:.5em;
+  letter-spacing:.04em;color:var(--shu-deep);opacity:.92;
+}
+
+/* hero what's-new */
+.hero-new{
+  margin:26px auto 0;display:flex;align-items:center;justify-content:center;gap:12px;
+  font-family:var(--serif);font-size:.95rem;letter-spacing:.05em;color:var(--ivory);
+}
+.hero-new .hn-v{
+  flex-shrink:0;font-family:var(--gothic);font-size:.62rem;font-weight:700;
+  letter-spacing:.22em;text-indent:.22em;
+  background:var(--shu);color:#f7ecd9;padding:3px 11px;border-radius:999px;
+}
+.hero-new rt{color:var(--gold);opacity:1}
+
+/* changelog: main feature line */
+.log-body li.log-main{font-weight:700;color:var(--ink);margin-bottom:4px}
+.log-body li.log-main::marker{color:var(--shu)}
+
+/* changelog: collapsed history */
+.log-more{margin-top:2px}
+.log-more summary{
+  list-style:none;cursor:pointer;user-select:none;text-align:center;
+  font-family:var(--gothic);font-size:.78rem;letter-spacing:.16em;color:var(--text-soft);
+  padding:11px 10px;border:1px dashed var(--hairline);border-radius:3px;
+  transition:color .25s,border-color .25s,background .25s;
+}
+.log-more summary:hover{color:var(--shu-deep);border-color:rgba(179,52,31,.45);background:#fbf7ec}
+.log-more summary::-webkit-details-marker{display:none}
+.log-more summary .op::before,.log-more summary .cl::before{content:"▾ ";font-size:.9em}
+.log-more summary .cl::before{content:"▴ "}
+.log-more summary .cl{display:none}
+.log-more[open] summary .op{display:none}
+.log-more[open] summary .cl{display:inline}
+.log-more[open] summary{margin-bottom:30px}
+
+/* ruby guide */
+kbd,.mkey{
+  font-family:var(--gothic);font-size:.76rem;font-weight:700;letter-spacing:.04em;
+  background:#fbf7ec;color:var(--ink);
+  border:1px solid var(--hairline);border-bottom-width:3px;border-radius:5px;
+  padding:3px 9px;white-space:nowrap;
+}
+.mkey{border-bottom-width:1px;border-style:dashed;font-weight:500;color:var(--text-soft)}
+.rg-rows{list-style:none;margin:0;padding:0}
+.rg-rows li{display:flex;gap:16px;align-items:flex-start;padding:13px 0;border-bottom:1px dashed var(--hairline)}
+.rg-rows li:first-child{padding-top:4px}
+.rg-rows li:last-child{border:none;padding-bottom:2px}
+.rg-rows .keys{flex-shrink:0;display:flex;align-items:center;gap:3px;min-width:106px;padding-top:3px}
+.rg-rows .plus{font-size:.78rem;color:var(--text-soft)}
+.rg-rows .desc{font-size:.9rem;color:var(--text-soft);line-height:2}
+.rg-rows .desc small{display:block;font-size:.78rem;color:#98917f;margin-top:2px}
+.mode{
+  display:inline-block;background:var(--paper-deep);border:1px solid var(--hairline);
+  border-radius:3px;padding:0 8px;font-family:var(--gothic);font-size:.8rem;color:var(--ink);
+}
+.rg-arrow{color:var(--gold);margin:0 5px;font-family:var(--gothic)}
+.rg-notes{list-style:none;margin:0;padding:0}
+.rg-notes li{position:relative;padding:8px 0 8px 20px;font-size:.9rem;color:var(--text-soft);line-height:1.95}
+.rg-notes li::before{content:"※";position:absolute;left:0;top:8px;color:var(--gold);font-size:.85rem}
+.hero-new a{
+  color:inherit;text-decoration:none;border-bottom:1px dashed rgba(237,229,210,.45);
+  padding-bottom:2px;transition:color .25s,border-color .25s;
+}
+.hero-new a:hover{color:var(--gold);border-color:var(--gold)}
 
 /* to top */
 .top{
@@ -525,10 +605,14 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
   .critical{padding:16px 16px;gap:12px}
   .dl-card{padding:32px 18px 26px}
   .inst{padding:22px 16px}
+  .rg-rows li{flex-direction:column;gap:8px}
+  .rg-rows .keys{min-width:0;padding-top:0}
   .steps li{padding-left:42px}
   .path{flex-direction:column}
   .copy{border-left:none;border-top:1px solid var(--hairline);padding:9px;justify-content:center}
   .log{padding-left:22px}
+  .credits{grid-template-columns:repeat(2,max-content);column-gap:36px;row-gap:12px}
+  .hero-new{flex-direction:column;gap:8px;font-size:.88rem;padding:0 12px}
   footer{padding:52px 14px 40px}
 }
 </style>
@@ -558,16 +642,18 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
   <p class="hero-sub">日本語化MOD</p>
 
   <div class="hero-meta">
-    <span class="ver">最新版 v2.2</span>
-    <span>2026.07.04 更新</span>
+    <span class="ver">最新版 v2.3</span>
+    <span>2026.07.19 更新</span>
     <span>無料・有志翻訳</span>
   </div>
 
+  <p class="hero-new"><span class="hn-v">NEW</span><a href="#rubyguide"><ruby>難読漢字<rt>なんどくかんじ</rt></ruby>もすらすら読める「ルビ表示」に対応</a></p>
+
   <div class="hero-cta">
-    <a class="cta cta-primary" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.2/LOM_JP_MOD_Setup_v2.2.exe">
+    <a class="cta cta-primary" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.3/LOM_JP_MOD_Setup_v2.3.exe">
       ダウンロード（インストーラー版）
     </a>
-    <a class="cta cta-ghost" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.2/LOM_JP_Mod_v2.2.zip">
+    <a class="cta cta-ghost" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.3/LOM_JP_Mod_v2.3.zip">
       手動導入版（.zip）
     </a>
   </div>
@@ -581,8 +667,8 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
   <!-- intro -->
   <section class="rv" style="margin-top:60px">
     <p class="lead">
-      武侠RPG『活俠傳 (Legend of Mortal)』の有志日本語化MOD配布ページへようこそ。<br>
-      このMODは、ゲーム内のテキストを日本語に翻訳し、より深く物語を楽しめるようにするためのものです。
+      <span class="nb">武侠RPG『活俠傳 (Legend of Mortal)』の</span><span class="nb">有志日本語化MOD配布ページへようこそ。</span><br>
+      <span class="nb">このMODは、</span><span class="nb">ゲーム内のテキストを日本語に翻訳し、</span><span class="nb">より深く物語を楽しめるように</span><span class="nb">するためのものです。</span>
     </p>
     <div class="steam">
       <div>
@@ -626,14 +712,14 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
         <h3>インストーラー版</h3>
         <div class="dl-type">.EXE ／ 自動インストール</div>
         <p class="dl-desc">実行するだけで導入完了。インストール先は自動検出されます。初めての方はこちら。</p>
-        <a class="btn btn-red" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.2/LOM_JP_MOD_Setup_v2.2.exe">ダウンロード (.exe)</a>
+        <a class="btn btn-red" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.3/LOM_JP_MOD_Setup_v2.3.exe">ダウンロード (.exe)</a>
       </div>
       <div class="dl-card">
         <div class="dl-kanji">匠</div>
         <h3>手動導入版</h3>
         <div class="dl-type">.ZIP ／ 手動コピー</div>
         <p class="dl-desc">ZIPを解凍してゲームフォルダにコピーする方式。導入先を自分で管理したい方向け。</p>
-        <a class="btn btn-ink" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.2/LOM_JP_Mod_v2.2.zip">ダウンロード (.zip)</a>
+        <a class="btn btn-ink" href="https://github.com/Dlaqe2334/LOM-JPMOD/releases/download/v2.3/LOM_JP_Mod_v2.3.zip">ダウンロード (.zip)</a>
       </div>
     </div>
     <p class="dl-foot">※ 最新バージョンはGitHubから自動的に取得されます。</p>
@@ -667,6 +753,39 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
         </ol>
       </div>
     </div>
+    <p class="dl-foot">※ 旧バージョンからの更新は<strong>上書きインストールのみでOK</strong>です。削除してからの再インストールなら、より確実です。</p>
+  </section>
+
+  <!-- ruby guide -->
+  <section id="rubyguide" class="rv">
+    <h2><span class="k">読</span><span><span class="en">RUBY GUIDE</span>ルビ表示の使い方</span></h2>
+    <div class="inst-grid">
+      <div class="inst">
+        <h3>操作方法<span class="tag">KEY</span></h3>
+        <ul class="rg-rows">
+          <li>
+            <span class="keys"><kbd>F7</kbd></span>
+            <span class="desc"><span class="mode">全表示</span><span class="rg-arrow">→</span><span class="mode"><ruby>初出<rt>しょしゅつ</rt></ruby>のみ</span><span class="rg-arrow">→</span><span class="mode">OFF</span> を切り替え<small>※ 次の文章から反映されます</small></span>
+          </li>
+          <li>
+            <span class="keys"><kbd>Ctrl</kbd><span class="plus">＋</span><kbd>F7</kbd></span>
+            <span class="desc">「初出のみ」の記録をリセット</span>
+          </li>
+          <li>
+            <span class="keys"><span class="mkey">マウスオン</span></span>
+            <span class="desc">話者名・別号・選択肢などは、カーソルを重ねると読みを表示<small>※ F7がOFFの時は表示されません</small></span>
+          </li>
+        </ul>
+      </div>
+      <div class="inst">
+        <h3>対応範囲について<span class="tag">INFO</span></h3>
+        <ul class="rg-notes">
+          <li>現在は、すべてのテキストにルビが付くわけではありません。今後のパッチで対応範囲を拡大していく予定です。</li>
+          <li>一部、ルビの位置がずれたり隠れたりする場合があります。順次調整・改善していきますので、ご了承ください。</li>
+          <li>表示崩れを防ぐため、極端に大きい文字ではルビを省略しています。</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- changelog -->
@@ -674,13 +793,22 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
     <h2><span class="k">歴</span><span><span class="en">CHANGELOG</span>更新履歴</span></h2>
     <div class="log">
       <div class="log-item latest">
-        <div class="log-head"><span class="log-ver">v2.2</span><span class="log-date">2026.07.04</span><span class="new">NEW</span></div>
+        <div class="log-head"><span class="log-ver">v2.3</span><span class="log-date">2026.07.19</span><span class="new">NEW</span></div>
+        <div class="log-body"><ul>
+          <li class="log-main">ルビ表示に対応 ── <ruby>難読漢字<rt>なんどくかんじ</rt></ruby>や<ruby>武侠用語<rt>ぶきょうようご</rt></ruby>の読み方がひと目でわかるように</li>
+          <li>翻訳を改善</li>
+        </ul></div>
+      </div>
+      <div class="log-item">
+        <div class="log-head"><span class="log-ver">v2.2</span><span class="log-date">2026.07.04</span></div>
         <div class="log-body"><ul><li>フォント改善に伴う不具合を修正</li><li>翻訳の誤りを修正</li></ul></div>
       </div>
       <div class="log-item">
         <div class="log-head"><span class="log-ver">v2.1</span><span class="log-date">2026.07.04</span></div>
         <div class="log-body"><ul><li>報告されたUIとテキストの誤りを修正・改善</li></ul></div>
       </div>
+      <details class="log-more">
+        <summary><span class="op">過去の更新履歴を見る（v2.0 以前）</span><span class="cl">過去の更新履歴を閉じる</span></summary>
       <div class="log-item">
         <div class="log-head"><span class="log-ver">v2.0</span><span class="log-date">2026.07.03</span></div>
         <div class="log-body"><ul><li>フォントを変更</li><li>翻訳を大幅に改善</li></ul></div>
@@ -701,6 +829,7 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
         <div class="log-head"><span class="log-ver">v1.0</span><span class="log-date">2025.12.31</span></div>
         <div class="log-body"><ul><li>初期日本語化MODリリース</li></ul></div>
       </div>
+      </details>
     </div>
   </section>
 
@@ -730,14 +859,22 @@ footer h3{letter-spacing:.4em;text-indent:.4em;font-size:1rem;margin:0 0 24px;co
 
 <footer>
   <h3>CREDITS</h3>
+  <p class="credits-note">── 敬称略・順不同 ──</p>
   <ul class="credits">
-    <li><span class="role">総括</span><span>Alpaca</span></li>
-    <li><span class="role">翻訳</span><span>kingdeakwang</span></li>
-    <li><span class="role">翻訳</span><span>殿</span></li>
-    <li><span class="role">翻訳</span><span>Goosle</span></li>
-    <li><span class="role">QA</span><span>Beanpaste</span></li>
+    <li>Alpaca</li>
+    <li>kingdeakwang</li>
+    <li>殿</li>
+    <li>Goosle</li>
+    <li>Beanpaste</li>
+    <li>Keine</li>
+    <li>MR</li>
+    <li>柳野かなた</li>
+    <li>1129</li>
+    <li>欧派紳士キール</li>
+    <li>にわとり</li>
+    <li>ばゆ</li>
   </ul>
-  <p class="copyright">&copy; 2025 Studio Alpaca / Obb Studio. Unofficial Fan Translation.</p>
+  <p class="copyright">&copy; 2025-2026 Studio Alpaca / Obb Studio. Unofficial Fan Translation.</p>
 </footer>
 
 <button class="top" type="button" aria-label="上へ" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
